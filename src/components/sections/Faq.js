@@ -91,42 +91,33 @@ const Faq = () => {
       <Title>FAQ</Title>
       <Container>
         <Box>
-          <Accordion title="WHERE CAN I VIEW MY NFTS?">
-            Once minted or bought simply connect to your OpenSea account to view
-            your NFTs.
+          <Accordion title="WHAT IS intX?">
+          intX is an AI-powered platform designed to help job seekers prepare for interviews by 
+          simulating real-world scenarios with AI avatars. It offers real-time feedback, 
+          analytics, and access to personal trainers to boost confidence and refine skills.
           </Accordion>
-          <Accordion title="WHAT IS THE METAVERSE?">
-            A metaverse is a network of 3D virtual worlds focused on social
-            connection. In futurism and science fiction, it is often described
-            as a hypothetical iteration of the Internet as a single, universal
-            virtual world that is facilitated by the use of virtual and
-            augmented reality headsets.
+          <Accordion title="WHO CAN USE intX?">
+          The platform is ideal for undergraduates, fresh graduates, and professionals 
+          seeking to improve their interview skills, particularly in the field of 
+          computer science.
           </Accordion>
-          <Accordion title="WHY DO WE NEED ROYALTIES?">
-            The amount of royalties was fixed at 5% to finance the Weirdos
-            Club's projects. We have the ambition to organize multiple events
-            around the world in order to strengthen the community and build a
-            network of entrepreneurs and investors with the same mindset and
-            common interests.
+          <Accordion title="WHAT TYPE OF FEEDBACK DOES intX PROVIDE?">
+          The platform offers insights on tone, diction, confidence, content relevance,
+          and delivery. After each session, users receive a score and improvement recommendations.
           </Accordion>
         </Box>
         <Box>
-          <Accordion title="HOW CAN I USE MY NFT?">
-            You will be able to use your NFT as an avatar in the Metaverse and
-            our future video game. Holding also means that you are part of an
-            exclusive network of investors and entrepreneurs.
+          <Accordion title="CAN I PRACTICE TECHNICAL INTERVIEWS ON intX?">
+          Yes, the platform supports technical interview preparation by analyzing responses 
+          to coding and problem-solving questions, with feedback to enhance your skills.
           </Accordion>
-          <Accordion title="WHAT ARE THE WEIRDOS?">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore
-            deserunt consequatur quisquam maxime molestias dolores ipsum,
-            exercitationem vel sint quidem aliquam modi quis impedit corporis
-            unde inventore fugiat provident in.
+          <Accordion title="HOW CAN I ACCESS intX">
+          You can access intX through its web application. Sign up, upload your documents,
+          and start your interview practice.
           </Accordion>
-          <Accordion title="WHAT IS THE FUSION PROCESS?">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel enim
-            veritatis iusto officia. Exercitationem, ducimus reiciendis. Rem,
-            maxime, similique neque minus aliquam dolore doloremque laboriosam,
-            facilis quibusdam unde sint officia.
+          <Accordion title="HOW DOES intX ENSURE USER PRIVACY?">
+          intX follows strict data security protocols and complies with privacy 
+          regulations to protect user information.
           </Accordion>
         </Box>
       </Container>
