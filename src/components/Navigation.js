@@ -261,8 +261,9 @@ const Navigation = () => {
         {/* Menu Items */}
         <Menu>
           <MenuItem>Home</MenuItem>
-          <MenuItem>Features</MenuItem>
+          <MenuItem>Services</MenuItem>
           <MenuItem>About Us</MenuItem>
+          <MenuItem>FAQ</MenuItem>
         </Menu>
 
         {/* Login Button */}
