@@ -59,7 +59,7 @@ const Title = styled.h1`
   color: ${(props) => props.theme.body};
   padding: 1rem 2rem;
   z-index: 10;
-  width: 35%;
+  width: 40%;
   text-transform: capitalize;
 
   text-shadow: 1px 1px 2px ${(props) => props.theme.text};
@@ -138,15 +138,10 @@ const Banner = () => {
   return (
     <Section>
       <ImgContainer>
-        <img src={img1} alt="The Weirdos" />
-        <img src={img2} alt="The Weirdos" />
-        <img src={img3} alt="The Weirdos" />
-        <img src={img4} alt="The Weirdos" />
-        <img src={img5} alt="The Weirdos" />
-        <img src={img6} alt="The Weirdos" />
+
       </ImgContainer>
       <Title>
-        Join the <br /> weirdos club
+        Good Luck for your Interview
       </Title>
       <BtnContainer>
         <JoinNow>Rate Us</JoinNow>
