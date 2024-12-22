@@ -14,7 +14,7 @@ const Section = styled.section`
 
 const Container = styled.div`
   width: 75%;
-  min-height: 80vh;
+  min-height: 100vh;
   margin: 0 auto;
   // min-height:100vh;
 

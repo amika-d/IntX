@@ -253,7 +253,7 @@ const LoginButton = styled.button`
 // Navigation Component
 const Navigation = () => {
   return (
-    <Section>
+    <Section id="navigation">
       <NavContainer>
         {/* Logo */}
         <Logo>intX</Logo>

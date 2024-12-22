@@ -21,8 +21,8 @@ function App() {
         <Home />
         <About />
         <Roadmap />
-        <Showcase />
-        <Team />
+        {/* <Showcase />
+        <Team /> */}
         <Faq />
         <Footer />
         <ScrollToTop />

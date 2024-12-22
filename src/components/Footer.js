@@ -174,17 +174,10 @@ const Footer = () => {
       </Container>
       <Bottom>
         <span>
-          &copy; {new Date().getFullYear()} Weirdos Club. All rights reserved.
+          &copy; {new Date().getFullYear()} intX. All rights reserved.
         </span>
         <span>
-          Made with &#10084; by
-          <a
-            href="https://youtube.com/codebucks"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            CodeBucks
-          </a>
+          Made with &#10084; by team intX. 
         </span>
       </Bottom>
     </Section>
