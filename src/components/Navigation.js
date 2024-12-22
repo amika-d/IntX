@@ -182,6 +182,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import intXLogo from "../assets/Thasara.png";
 
 // Styled Components
 const Section = styled.section`
@@ -204,11 +205,13 @@ const NavContainer = styled.nav`
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 `;
 
-const Logo = styled.h1`
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #000; /* Black text */
-  margin: 0;
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const LogoImage = styled.img`
+  height: 25px; /* Adjust the height as needed */
 `;
 
 const Menu = styled.ul`
@@ -252,18 +255,25 @@ const LoginButton = styled.button`
 
 // Navigation Component
 const Navigation = () => {
+
+  const scrollTo = (id) => {
+       let element = document.getElementById(id);
+  }
+  
   return (
     <Section id="navigation">
       <NavContainer>
         {/* Logo */}
-        <Logo>intX</Logo>
+        <Logo>
+          <LogoImage src={intXLogo} alt="intX Logo" />
+        </Logo>
 
         {/* Menu Items */}
         <Menu>
-          <MenuItem>Home</MenuItem>
-          <MenuItem>Services</MenuItem>
+          <MenuItem onClick={() => scrollTo("home")}>Home</MenuItem>
+          <MenuItem onClick={() => scrollTo("Roadmap")}>Services</MenuItem>
           <MenuItem>About Us</MenuItem>
-          <MenuItem>FAQ</MenuItem>
+          <MenuItem onClick={() => scrollTo("faq")}>FAQ</MenuItem>
         </Menu>
 
         {/* Login Button */}
