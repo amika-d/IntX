@@ -1,6 +1,7 @@
 /* TrainerSelection.css */
 body {
-    overflow-x: hidden; /* Disable horizontal overflow if any */
+    overflow-x: hidden;
+    /* Disable horizontal overflow if any */
 }
 
 h1 {
@@ -8,8 +9,10 @@ h1 {
     font-size: 56px;
     color: black;
     text-align: center;
-    margin-top: 450px; /* Add margin to make sure it's not overlapped */
-    position: relative; /* Ensure it's not being covered */
+    margin-top: 50px;
+    /* Add margin to make sure it's not overlapped */
+    position: relative;
+    /* Ensure it's not being covered */
 }
 
 span {
@@ -21,7 +24,8 @@ span {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    padding-top: 20px; /* Adjust top padding for better alignment */
+    padding-top: 20px;
+    /* Adjust top padding for better alignment */
     width: 100%;
 }
 
@@ -39,10 +43,18 @@ fieldset {
 }
 
 fieldset img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    /* Width of the circular frame */
+    height: 150px;
+    /* Height of the circular frame */
     border-radius: 50%;
+    /* Makes the image circular */
+    object-fit: cover;
+    /* Ensures the image fits inside the circle */
+    object-position: top;
+    /* Adjusts which part of the image is displayed */
     margin-bottom: 10px;
+    /* Spacing below the image */
 }
 
 fieldset h3 {
@@ -93,22 +105,92 @@ fieldset p {
 
 .modal.active {
     display: block;
+    font-size: 1rem;
+    color: #000000;
+    width: 700px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    /* Updated to match the theme */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .modal-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin-left: -120px;
     font-size: 1.5rem;
     margin-bottom: 10px;
     font-weight: bold;
 }
 
+
 .modal-body {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+    gap: 20px;
+    /* Space between the image and the text */
+    width: 600px;
+    /* Width of the modal */
 }
+
+.modal-body img.trainer-modal-image {
+    width: 150px;
+    height: 200px;
+    border-radius: 25px;
+    object-fit: cover;
+    /* Ensures the image fits nicely */
+    margin-left: -35px;
+}
+
+.modal-body .details-container {
+    display: flex;
+    flex-direction: column;
+    /* Aligns items vertically */
+    gap: 10px;
+    /* Space between each text item */
+    text-align: justify;
+}
+
+.modal-body p {
+    margin: 0;
+    /* Reset margins to avoid uneven spacing */
+    color: #000000;
+    /* Text color for readability */
+    line-height: 1.5;
+    /* Improves text spacing */
+    text-align: justify;
+}
+
+.details-container p {
+    margin-left: 0;
+    /* Align all details uniformly to the left */
+    text-align: left;
+    /* Ensure all text is left-aligned */
+    text-align: justify;
+}
+
+.p {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* Consistent spacing between items */
+    margin: 0;
+    /* Remove any default margin */
+    text-align: justify;
+}
+
+#info {
+    margin: 0;
+    line-height: 1.5;
+    text-align: justify;
+}
+
 
 .rating-stars {
     color: #bc9e24;
@@ -121,8 +203,9 @@ fieldset p {
     color: #333;
     font-size: 1.5rem;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 350px;
     font-size: 20px;
+    margin-right: -130px;
 }
 
 .modal-button {
