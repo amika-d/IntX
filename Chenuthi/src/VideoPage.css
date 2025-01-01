@@ -4,23 +4,26 @@ body {
     /* Hide overflow for fullscreen effect */
 }
 
-p {
+#id1 {
+    text-align: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 42px;
-    margin-left: 780px;
-    margin-top: 90px;
-    text-align: center;
-    line-height: 55px;
+    margin-left: 750px;
+    margin-top: 50px;
+    line-height: 65px;
 }
 
 #span1 {
     color: #EAC42D;
 }
 
-button {
+.button {
+    margin-left: 650px;
+    padding: 10px;
+    justify-content: center;
     margin-left: 900px;
     width: 200px;
-    height: 60px;
+    height: 50px;
     background-color: #EAC42D;
     border: #ccc;
     font-family: "Roboto";
@@ -54,10 +57,10 @@ button:active {
 
 video {
     display: block;
-    width: 700px;
-    height: 400px;
+    width: 740px;
+    height: 460px;
     margin-left: 60px;
-    margin-top: -320px;
+    margin-top: -360px;
     object-fit: cover;
     border-radius: 20px;
     /* Adds rounded corners */
@@ -127,8 +130,12 @@ video {
 
 /* Login Button Styles */
 .login-button {
-    width: 150px;
-    height: 47px;
+    display: flex; /* Allows alignment properties to work */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Centers multiline text */
+    width: 100px;
+    height: 35px;
     background-color: #000;
     color: #fff;
     padding: 0.5rem 1.5rem;
