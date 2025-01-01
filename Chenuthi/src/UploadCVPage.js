@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './UploadCVPage.css';
 import 'font-awesome/css/font-awesome.min.css'; // Ensure you have your CSS file for styles
 
 const UploadCVPage = () => {
     const [fileName1, setFileName1] = useState('No file selected');
     const [fileName2, setFileName2] = useState('No file selected');
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleFileInput1Change = (event) => {
         const file = event.target.files[0];
@@ -16,9 +18,12 @@ const UploadCVPage = () => {
         setFileName2(file ? file.name : 'No file selected');
     };
 
+    const handleNextClick = () => {
+        navigate('/make-your-choice'); // Navigate to MakeYourChoicePage
+    };
+
     return (
         <div>
-            <Navigation/>
             <section className="section">
                 <nav className="nav-container">
                     <h1 className="logo">intX</h1>
@@ -56,7 +61,7 @@ const UploadCVPage = () => {
                     <label htmlFor="fileInput2" className="upload-label">
                         <i className="fa fa-upload"></i>
                         Drag & Drop Files Here
-                    </label>
+ </label>
                     <input
                         type="file"
                         id="fileInput2"
@@ -67,11 +72,10 @@ const UploadCVPage = () => {
                     <span className="file-name" id="fileName2">{fileName2}</span>
                 </div>
                 <br/>
-                <button type="submit" id="button1">
+                <button type="button" id="button1" onClick={handleNextClick}>
                     Next {/* Ensure this is the correct class */}
                 </button>
             </div>
-            <Footer/>
         </div>
     );
 };
