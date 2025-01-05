@@ -34,10 +34,10 @@ const TrainerModal = ({ trainerDetails, isOpen, onClose, proceedToCheckout, gene
                             {generateStars(trainerDetails.rating)} {trainerDetails.rating}
                         </span>
                     </span>
-                </div>
-                <button className="close-button" onClick={onClose}>
+                    <button className="close-button" onClick={onClose}>
                         ✖
-                </button>
+                    </button>
+                </div>
                 <div className="modal-body">
                     <img
                         src={trainerDetails.imgSrc}
@@ -49,6 +49,7 @@ const TrainerModal = ({ trainerDetails, isOpen, onClose, proceedToCheckout, gene
                         <p id="info"><strong>Title:</strong> {trainerDetails.title}</p>
                         <p id="info"><strong>Company:</strong> {trainerDetails.company}</p>
                         <p id="info"><strong>Experience:</strong> {trainerDetails.experience}</p>
+                        <p id="info"><strong>Price:</strong> ${trainerDetails.price}</p>
                     </div>
                 </div>
                 <button className="modal-button" onClick={proceedToCheckout}>
@@ -71,6 +72,7 @@ const TrainerSelection = () => {
             company: "ABC Corp",
             experience: "10 years",
             rating: 4.8,
+            price: 150, // Added price
             imgSrc: "./Images/Trainer1.png",
             description:
                 "James Carter is an experienced hiring manager with expertise in identifying talent and coaching candidates to excel in interviews. He has a proven track record of helping professionals secure their dream jobs.",
@@ -81,6 +83,7 @@ const TrainerSelection = () => {
             company: "XYZ Ltd",
             experience: "8 years",
             rating: 4.7,
+            price: 120, // Added price
             imgSrc: "./Images/Trainer2.png",
             description:
                 "Michael Reed specializes in leadership development and career growth. With years of experience coaching executives, he brings insights that are invaluable to career progression.",
@@ -91,6 +94,7 @@ const TrainerSelection = () => {
             company: "NextStep Careers",
             experience: "13 years",
             rating: 4.9,
+            price: 200, // Added price
             imgSrc: "./Images/Trainer5.jpeg",
             description:
                 "Sophia Taylor specializes in creating effective interview strategies tailored to individual strengths. With over a decade of experience, she has helped numerous candidates secure their dream roles.",
@@ -101,17 +105,18 @@ const TrainerSelection = () => {
             company: "CareerAscend",
             experience: "10 years",
             rating: 4.8,
+            price: 180, // Added price
             imgSrc: "./Images/Trainer6.jpeg",
             description:
                 "Emily Davis is an expert in behavioral interview techniques. She helps candidates master the STAR method and other frameworks to excel in competency-based interviews.",
         },
-
         {
             name: "William Harris",
             title: "Recruitment Expert",
             company: "Elite Recruiters",
-            experience: "9 years",
+            experience: " 9 years",
             rating: 4.9,
+            price: 160, // Added price
             imgSrc: "./Images/Trainer3.png",
             description:
                 "William Harris is a recruitment expert who has worked with top-tier companies to scout and develop talent. His sessions provide a comprehensive understanding of the hiring process.",
@@ -122,6 +127,7 @@ const TrainerSelection = () => {
             company: "SkillsPro",
             experience: "7 years",
             rating: 4.5,
+            price: 140, // Added price
             imgSrc: "./Images/Trainer4.png",
             description:
                 "Ethan Blake focuses on enhancing interpersonal and communication skills, ensuring candidates present themselves effectively during interviews and in the workplace.",
@@ -132,6 +138,7 @@ const TrainerSelection = () => {
             company: "TeamWorks",
             experience: "11 years",
             rating: 4.7,
+            price: 170, // Added price
             imgSrc: "./Images/Trainer7.jpeg",
             description:
                 "Olivia Brown brings years of experience in team management and organizational leadership. She helps candidates master collaborative and leadership skills to stand out.",
@@ -142,6 +149,7 @@ const TrainerSelection = () => {
             company: "SpeakEasy",
             experience: "15 years",
             rating: 4.8,
+            price: 190, // Added price
             imgSrc: "Images/Trainer8.jpeg",
             description:
                 "Isabella Clark is an accomplished public speaking coach who empowers candidates to communicate with confidence and clarity in interviews and presentations.",
@@ -187,7 +195,7 @@ const TrainerSelection = () => {
             <h1>
                 Select <span>Your</span> Trainer ...
             </h1>
-            <div class ="container">
+            <div className="container">
                 {trainers.map((trainer, index) => (
                     <TrainerCard key={index} trainer={trainer} onViewClick={openModal} />
                 ))}
