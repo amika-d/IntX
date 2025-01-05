@@ -1,40 +1,27 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
-import "./TrainerSelection.css"; // Import the CSS file
+import { useNavigate } from "react-router-dom";
+import "./TrainerSelection.css";
 
 const TrainerCard = ({ trainer, onViewClick }) => {
     return (
-        <fieldset>
-            <img src={trainer.imgSrc} alt={trainer.name} />
-            <h3>{trainer.name}</h3>
-            <p>{trainer.title}</p>
-            <button
-                className="view-button"
-                onClick={() =>
-                    onViewClick(
-                        trainer.name,
-                        trainer.title,
-                        trainer.company,
-                        trainer.experience,
-                        trainer.rating,
-                        trainer.description,
-                        trainer.imgSrc
-                    )
-                }
-            >
-                View
-            </button>
+        <fieldset id="fieldset1">
+            <div className="trainer-card-content">
+                <img src={trainer.imgSrc} alt={trainer.name} className="trainer-image" />
+                <h3>{trainer.name}</h3>
+                <p>{trainer.title}</p>
+                <p>Price: ${trainer.price}</p>
+                <button
+                    className="view-button"
+                    onClick={() => onViewClick(trainer)}
+                >
+                    Proceed To Pay
+                </button>
+            </div>
         </fieldset>
     );
 };
 
-const TrainerModal = ({
-    trainerDetails,
-    isOpen,
-    onClose,
-    onBookSession,
-    generateStars,
-}) => {
+const TrainerModal = ({ trainerDetails, isOpen, onClose, proceedToCheckout, generateStars }) => {
     if (!isOpen) return null;
 
     return (
@@ -47,10 +34,10 @@ const TrainerModal = ({
                             {generateStars(trainerDetails.rating)} {trainerDetails.rating}
                         </span>
                     </span>
-                    <button className="close-button" onClick={onClose}>
-                        ✖
-                    </button>
                 </div>
+                <button className="close-button" onClick={onClose}>
+                        ✖
+                </button>
                 <div className="modal-body">
                     <img
                         src={trainerDetails.imgSrc}
@@ -64,8 +51,8 @@ const TrainerModal = ({
                         <p id="info"><strong>Experience:</strong> {trainerDetails.experience}</p>
                     </div>
                 </div>
-                <button className="modal-button" onClick={onBookSession}>
-                    Book a Session
+                <button className="modal-button" onClick={proceedToCheckout}>
+                    Checkout
                 </button>
             </div>
         </div>
@@ -75,7 +62,7 @@ const TrainerModal = ({
 const TrainerSelection = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedTrainer, setSelectedTrainer] = useState(null);
-    const navigate = useNavigate(); // Use useNavigate for navigation
+    const navigate = useNavigate();
 
     const trainers = [
         {
@@ -118,6 +105,7 @@ const TrainerSelection = () => {
             description:
                 "Emily Davis is an expert in behavioral interview techniques. She helps candidates master the STAR method and other frameworks to excel in competency-based interviews.",
         },
+
         {
             name: "William Harris",
             title: "Recruitment Expert",
@@ -160,27 +148,20 @@ const TrainerSelection = () => {
         },
     ];
 
-    const openModal = (
-        name,
-        title,
-        company,
-        experience,
-        rating,
-        description,
-        imgSrc
-    ) => {
-        setSelectedTrainer({ name, title, company, experience, rating, description, imgSrc });
+    const openModal = (trainer) => {
+        setSelectedTrainer(trainer);
         setModalOpen(true);
     };
 
     const closeModal = () => {
         setModalOpen(false);
+        setSelectedTrainer(null);
     };
 
-    const bookSession = () => {
-        setModalOpen(false);
-        // Replace with your actual appointment schedule link
-        window.open("https://calendar.app.google/zaHN6diqG2ckUcAQ9", "_blank");
+    const proceedToCheckout = () => {
+        if (selectedTrainer) {
+            navigate('/payment', { state: { trainer: selectedTrainer } });
+        }
     };
 
     const generateStars = (rating) => {
@@ -206,7 +187,7 @@ const TrainerSelection = () => {
             <h1>
                 Select <span>Your</span> Trainer ...
             </h1>
-            <div className="container">
+            <div class ="container">
                 {trainers.map((trainer, index) => (
                     <TrainerCard key={index} trainer={trainer} onViewClick={openModal} />
                 ))}
@@ -216,7 +197,7 @@ const TrainerSelection = () => {
                 trainerDetails={selectedTrainer}
                 isOpen={modalOpen}
                 onClose={closeModal}
-                onBookSession={bookSession} // Pass the bookSession function
+                proceedToCheckout={proceedToCheckout}
                 generateStars={generateStars}
             />
         </div>
