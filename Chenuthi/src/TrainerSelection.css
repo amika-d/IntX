@@ -113,18 +113,17 @@ fieldset {
 }
 
 .close-button {
-    background-color: transparent;
+    background: none; 
     position: absolute;
     top: 10px;
-    right: -165px;
+    right: -185px;
     font-size: 20px;
     cursor: pointer;
     color: black;
-    left: 330px;
+    left: 670px;
+    width: 50px;
 }
-.close-button :hover{
-    background-color: transparent;
-}
+
 
 .proceed-button {
     background-color: #EAC42D;
