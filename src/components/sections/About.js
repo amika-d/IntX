@@ -142,6 +142,12 @@ const ButtonContainer = styled.div`
   }
 `;
 
+const scrollToRoadmap = () => {
+  const element = document.getElementById("Roadmap");
+  element.scrollIntoView({ behavior: "smooth" });
+};
+
+
 const About = () => {
   return (
     <Section id="about">
@@ -162,7 +168,7 @@ const About = () => {
           </SubTextLight>
           <ButtonContainer>
             <ThemeProvider theme={dark}>
-              <Button text="Get Started" link="#" />
+              <Button text="Get Started" onClick={scrollToRoadmap} />
             </ThemeProvider>
           </ButtonContainer>
         </Box>
