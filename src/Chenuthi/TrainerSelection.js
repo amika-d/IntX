@@ -9,17 +9,19 @@ import Trainer5 from "../assets/Trainer5.jpg";
 import Trainer6 from "../assets/Trainer6.jpg";
 import Trainer7 from "../assets/Trainer7.jpg";
 import Trainer8 from "../assets/Trainer8.jpg";
-
+import Arrow from "../assets/Arrow.svg";
 
 
 const TrainerCard = ({ trainer, onViewClick }) => {
     return (
         <fieldset>
             <img src={trainer.imgSrc} alt={trainer.name} />
-            <h3>{trainer.name}</h3>
-            <p>{trainer.title}</p>
-            <button
-                className="view-button"
+            <div class="trainer-info">
+                <span class="trainer-name">{trainer.name}</span>
+                <img
+                src={Arrow} // Replace this with the actual path to your arrow image
+                alt="View Details"
+                className="arrow-icon"
                 onClick={() =>
                     onViewClick(
                         trainer.name,
@@ -31,9 +33,8 @@ const TrainerCard = ({ trainer, onViewClick }) => {
                         trainer.imgSrc
                     )
                 }
-            >
-                View
-            </button>
+            />
+            </div>
         </fieldset>
     );
 };
